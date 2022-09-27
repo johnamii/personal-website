@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.homescreen{
+  background-color: #282c34;
+  color: white;
+  height: 150vh;
+  width: 100vw;
+  display: flex;
+  
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.ditto-div{
+  background-color: white;
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid pink;
+  border-radius: 10mm;
+  
+}
+
+.header{
+  height: 10%;
+  width: 100%;
+  border-bottom: 3px solid black;
+  background-color: #1e2127;
+  text-align: center;
+  
+  position: absolute;
+  top: 0;
+  font-size: medium;
+}
+
+.body{
+  background-color: #dff0ff;
+  height: 140vh;
+  width: 95%;
+  top: 50vh;
+  text-align: center;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin: auto;
+}
