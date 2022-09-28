@@ -8,7 +8,7 @@ const Header = () => {
       Waiting to find some time to build my personal website, here's a ditto to pass the time
       <br/>
       <a href='https://github.com/johnamii'> github </a> ---
-      <a href='https://www.linkedin.com/in/john-flanagan-343058230/'> linkedin </a>
+      <a href='poketheme.johnamii.com'> poketheme </a>
     </div>
   )
 }
