@@ -1,40 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  color: pink;
 }
 
 .homescreen{
@@ -43,16 +8,67 @@
   height: 150vh;
   width: 100vw;
   display: flex;
-  
-  justify-content: center;
-  flex-direction: column;
 }
+
+.mobilescreen{
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+  width: 100vw;
+}
+
+.header{
+  height: 10%;
+  width: 95%;
+  text-align: center;
+  color: #1e2127;
+
+  position: absolute;
+  font-size:300%;
+  align-items: center;
+}
+
+.mobile-bar{
+  height:7vh;
+  width: 100%;
+  background-color: #1e2127;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  
+}
+
+.sidebar{
+  height: 150vh;
+  background:#1e2127;
+  border-right: 1px solid #757F95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:absolute;
+}
+
+.sidebar-icon{
+  height: 5vh;
+  background-color: transparent;
+  border: 1px solid #757F95;
+  color: white;
+  border-radius: 2mm;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 .center{
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  align-items: flex-end;
 }
 
 .ditto-div{
@@ -63,29 +79,26 @@
   align-items: center;
   justify-content: center;
   border: 10px solid pink;
-  border-radius: 10mm;
-  
+  border-radius: 10mm; 
 }
 
-.header{
-  height: 10%;
-  width: 100%;
-  border-bottom: 3px solid black;
-  background-color: #1e2127;
-  text-align: center;
-  
+.theme-button{
+  height: 60%;
+
   position: absolute;
-  top: 0;
-  font-size: medium;
+  top: 10%;
+  right: 0%;
 }
 
-.body{
-  background-color: #dff0ff;
-  height: 140vh;
-  width: 95%;
-  top: 50vh;
-  text-align: center;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  margin: auto;
+.water{
+  height: 50%;
+}
+
+.boat{
+  position: absolute;
+  height: 10vw;
+  width: 10vw;
+  top: 50%;
+  left: 50%;
+  
 }

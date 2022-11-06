@@ -1,1 +1,4 @@
-My personal website which will eventually be fleshed out, once I have time
+My personal website, links and portfolio.
+
+Using woofers's react-wavify.
+Using react-device-detect
