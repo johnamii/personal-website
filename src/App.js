@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { MobileView, BrowserView, isMobile } from 'react-device-detect'
 
 const Header = (props) => {
-
+//error: blocks top part of sidebar
   return  (
     <div className='header' style={isMobile ? {top:'8%', fontSize: '250%'} : {top: '1%'}} >
       <i style={props.light ? {color:'black'} : {color: 'white'}}> John Flanagan </i>

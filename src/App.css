@@ -19,13 +19,14 @@ body{
 
 .header{
   height: 10%;
-  width: 95%;
-  text-align: center;
+  width: 58%;
   color: #1e2127;
 
   position: absolute;
+  right: 1%;
   font-size:300%;
   align-items: center;
+  justify-content: space-between;
 }
 
 .mobile-bar{
