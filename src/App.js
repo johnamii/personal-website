@@ -3,59 +3,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Wave from 'react-wavify'
 import { useEffect, useState } from 'react';
 import { MobileView, BrowserView, isMobile } from 'react-device-detect'
+import { SideBar, MobileBar } from './sidebar.js'
+import AboutPopup from './AboutPopup';
+import AppStyles from './AppStyles';
 
 const Header = (props) => {
 //error: blocks top part of sidebar
   return  (
-    <div className='header' style={isMobile ? {top:'8%', fontSize: '250%'} : {top: '1%'}} >
-      <i style={props.light ? {color:'black'} : {color: 'white'}}> John Flanagan </i>
+    <div className='header' style={isMobile ? {top:'8%', fontSize: '250%', width: '90%', right: '4%', justifyContent:'center'} : {top: '1%', width: '58%'}} >
+      <b style={props.light ? {color:'black'} : {color: 'white'}}> John Flanagan </b>
       <img className='theme-button' src={props.light ? '/sun.png' : '/moon.png'} onClick={() => props.handleClick()}/>
-    </div>
-  )
-}
-
-const IconButton = (props) => {
-
-//props.extended
-  return (
-    <a href={props.url}>
-      <button className='sidebar-icon' href='https://github.com/johnamii' style={props.ext ? {width: '25vh'} : {width:'5vh'}}>
-        <img src={props.img} alt={props.name} style={{height: '70%'}}/>
-        {props.ext ? props.name : ''}
-      </button>
-    </a>
-  )
-}
-
-const MobileBar = (props) => {
-  return (
-    <div className='mobile-bar'>
-      <IconButton name='GitHub' url='https://github.com/johnamii' img='/github-light.png' />
-      <IconButton name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png' />
-      <IconButton name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
-    </div>
-  )
-}
-
-const SideBar = (props) => {
-  const [extended, setExtended] = useState(false);
-
-  return (
-    <div className='sidebar' 
-    onMouseEnter={() => setExtended(true)} 
-    onMouseLeave={() => setExtended(false)} 
-    style={extended ? {width:'15%'} : {width: '4%'}}
-    >
-      <IconButton name='GitHub' url='https://github.com/johnamii' img='/github-light.png' ext={extended}/>
-      <IconButton name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png' ext={extended}/>
-      <IconButton name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png' ext={extended}/>
     </div>
   )
 }
 
 const Center = (props) => {
   return (
-    <div className='center' style={props.lightTheme ? {background:'#8FCBFF'} : {background: '#05081C'}}>
+    <div className='center' style={{background: props.lightTheme ? 'linear-gradient(#8FCBFF 20%, #FFCD8C)' : 'linear-gradient(#05081C 35%, #8FCBFF)'}}>
       <Header light={props.lightTheme} handleClick={() => props.themeClick()}/> 
       <Wave className='water' fill='url(#gradient)' options={{height: 40, amplitude: 40}}>
         <defs>
@@ -72,6 +36,11 @@ const Center = (props) => {
 const HomeScreen = () => {
 
   const [light, setLight] = useState(true);
+  const [popup, setPopup] = useState(null);
+  
+  function popupClick(val){
+    popup === null ? setPopup(val) : setPopup(null);
+  }
 
   function handleClick(){
     setLight(!light);
@@ -83,15 +52,18 @@ const HomeScreen = () => {
         <div className='mobilescreen'>
           <MobileBar/>
           <Center lightTheme={light} themeClick={() => handleClick()}/>
-            <img className='boat' id='boat' src='/sailboat.png' />
+            <img className='boat' id='boat' src='/sailboat.png' onClick={() => {console.log('boat!')}}/>
+           
         </div>
       </MobileView>
 
       <BrowserView>
         <div className='homescreen'>
-          <SideBar/>
+          <AboutPopup visible={popup === 'about-me'}/>
+          <SideBar popupClick={(val) => popupClick(val)}/>
           <Center lightTheme={light} themeClick={() => handleClick()}/>
-          <img className='boat' src='/sailboat.png'></img>
+          <img className='boat' src={AppStyles.icon.images.logo}></img>
+          
           
         </div>
       </BrowserView>

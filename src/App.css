@@ -1,11 +1,13 @@
 body{
   color: pink;
+  width: 99vw;
+  overflow-x:hidden;
 }
 
 .homescreen{
   background-color: #282c34;
   color: white;
-  height: 150vh;
+  height: 200vh;
   width: 100vw;
   display: flex;
 }
@@ -19,7 +21,6 @@ body{
 
 .header{
   height: 10%;
-  width: 58%;
   color: #1e2127;
 
   position: absolute;
@@ -27,6 +28,7 @@ body{
   font-size:300%;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .mobile-bar{
@@ -42,13 +44,14 @@ body{
 }
 
 .sidebar{
-  height: 150vh;
+  height: 100vh;
   background:#1e2127;
   border-right: 1px solid #757F95;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position:absolute;
+  position:fixed;
+  font-size: x-small;
 }
 
 .sidebar-icon{
@@ -62,25 +65,7 @@ body{
   display:flex;
   align-items: center;
   justify-content: space-between;
-}
 
-
-.center{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-}
-
-.ditto-div{
-  background-color: white;
-  width: 50vh;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 10px solid pink;
-  border-radius: 10mm; 
 }
 
 .theme-button{
@@ -91,15 +76,96 @@ body{
   right: 0%;
 }
 
+.divider-bar{
+  width: 80%;
+  height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: white;
+}
+
+.sidebar-title{
+  margin-top: 10px;
+  color: lightskyblue;
+  font-size:small;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.popup-window{
+  position: absolute;
+  height: 50vh;
+  width: 50vw;
+  background: rgb(256, 256, 256, .6);
+  border-radius: 2mm;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  box-shadow: 1px 1px 5px 1px rgb(50, 50, 50, .5);
+  text-align: center;
+  animation: emerge-from-bar .5s 1;
+}
+
+.about-tabs{
+  
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.about-tab{
+  height: 100%;
+  width: 20%;
+  background: transparent;
+  border: none;
+  font-size: large;
+  font-weight:bold;
+}
+
+.about-text{
+  color:'black'
+}
+
 .water{
-  height: 50%;
+  height: 62%;
 }
 
 .boat{
   position: absolute;
   height: 10vw;
   width: 10vw;
-  top: 50%;
-  left: 50%;
+  top: 63%;
+  left: 45%;
   
+  animation: difting 5ms infinite, floating 7071ms infinite;
+  
+}
+
+@keyframes floating {
+  from {transform: translateY(0%);}
+  55% {transform: translateY(22%);}
+  to {transform: translateY(0%);}
+}
+
+@keyframes drifting {
+  from {transform: rotate(45deg);}
+  to {transform: rotate(0deg);}
+}
+
+@keyframes emerge-from-bar{
+  from {margin-left: -100%;}
+  to { margin-left: 0%;}
+}
+@keyframes return-to-bar {
+  from {margin-left:0%;}
+  to {margin-left:-100%;}
 }
