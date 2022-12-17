@@ -22,6 +22,7 @@ body{
 .header{
   height: 10%;
   color: #1e2127;
+  background:'white';
 
   position: absolute;
   right: 1%;
@@ -43,52 +44,12 @@ body{
   
 }
 
-.sidebar{
-  height: 100vh;
-  background:#1e2127;
-  border-right: 1px solid #757F95;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position:fixed;
-  font-size: x-small;
-}
-
-.sidebar-icon{
-  height: 5vh;
-  background-color: transparent;
-  border: 1px solid #757F95;
-  color: white;
-  border-radius: 2mm;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-
-}
-
 .theme-button{
   height: 60%;
 
   position: absolute;
   top: 10%;
   right: 0%;
-}
-
-.divider-bar{
-  width: 80%;
-  height: 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background: white;
-}
-
-.sidebar-title{
-  margin-top: 10px;
-  color: lightskyblue;
-  font-size:small;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .center{
