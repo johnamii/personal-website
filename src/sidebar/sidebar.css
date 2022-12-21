@@ -1,43 +1,81 @@
-.sidebar{
+.sidebar-container{
   height: 100vh;
-  background:#1e2127;
   border-right: 1px solid #757F95;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position:fixed;
-  font-size: x-small;
+  font-size: 60%;
 }
 
-.sidebar-icon{
-  height: 2.5rem;
+.scroll-view{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.tab{
+  height: 3em;
   background-color: transparent;
-  border: 1px solid #757F95;
+  border: 1px solid;
   color: white;
   border-radius: 1em;
-  margin: 1em;
+  margin: .6em;
   
   display:flex;
   align-items: center;
-  justify-content: space-between;
+  font-size:1.5em;
 }
 
 .icon-image{
-  height: 2em;
+  height: 75%;
+}
+
+.group-wrapper{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 1.5em;
+  margin-bottom:1.5em;
+}
+
+.group-button{
+  background:none;
+  border:none;
+  display:flex;
+  align-items: center;
+  height: 3em;
+  width: 100%;
+  max-width: 4.5em;
+}
+
+.collapse-arrow{
+  height: 35%;
+  margin-left: 5px;
+  margin-top: 5px;
+  
+  fill:white;
+}
+
+.group-container{
+  width: 100%;
+  
+  border-left: 2px solid;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .divider-bar{
-    width: 80%;
-    height: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: white;
-  }
-  
-.sidebar-title{
-  margin-top: 10px;
-  color: lightskyblue;
-  font-size:small;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 75%;
+  height: 1px;
+  background: #757F95;
+  margin-top:2em;
+  margin-bottom:1em;
 }
-  
+
+.menu-button{
+  height: 2rem;
+  fill:white;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}

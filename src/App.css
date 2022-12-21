@@ -22,10 +22,10 @@ body{
 .header{
   height: 10%;
   color: #1e2127;
-  background:'white';
+  
 
   position: absolute;
-  right: 1%;
+  right: 2rem;
   font-size:300%;
   align-items: center;
   justify-content: space-between;

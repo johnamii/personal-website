@@ -1,11 +1,11 @@
-import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Wave from 'react-wavify'
 import { useState } from 'react';
 import { MobileView, BrowserView, isMobile } from 'react-device-detect'
-import { SideBar, IconButton } from './sidebar/sidebar.js'
+import { SideBar, Group, Tab, Divider } from './sidebar/sidebar.js'
 import AboutPopup from './AboutPopup';
 import {AppStyles} from './AppStyles';
+import './App.css';
 
 const Header = (props) => {
   return  (
@@ -23,10 +23,24 @@ const Header = (props) => {
 
 const Center = (props) => {
 
+  // need to give id to wave svg path
+  // so you can have image element follow that path
+
   return (
     <div className='center' style={{background: props.lightTheme ? 'linear-gradient(#8FCBFF 20%, #FFCD8C)' : 'linear-gradient(#05081C 35%, #8FCBFF)'}}>
       <Header light={props.lightTheme} handleClick={() => props.themeClick()}/>
+
       <Wave className='water' fill='url(#gradient)' options={{height: 40, amplitude: 40}} id="wave">
+        <image 
+          href="/sailboat_white.png" 
+          id="sailboat" 
+          x="15" y="15" 
+          height="50px" width="50px" 
+        >
+          <animateMotion href="#sailboat" dur="10s"repeatCount="indefinite">
+            <mpath href="#wavePath"/>
+          </animateMotion>
+        </image>
         <defs>
           <linearGradient id="gradient" gradientTransform="rotate(90)">
             <stop offset="20%"  stopColor="#006FA3" />
@@ -55,24 +69,51 @@ const HomeScreen = () => {
 
   return (
     <div>
+      <BrowserView>
+        <div className='homescreen'>
+          <AboutPopup visible={popup === 'about-me'}/>
+          
+          <Center lightTheme={light} themeClick={() => handleClick()}/>
+          <img className='boat' src={light ? logos.logoLight : logos.logoDark} alt="Sailboat"/>
+
+          <SideBar >
+            <Group name="Me">
+              <Tab name='About Me' img={AppStyles.icon.images.logoDark} onClick={() => popupClick("about-me")}/>
+              <Tab name='GitHub' img='/github-light.png' url='https://github.com/johnamii' />
+            </Group>
+
+            <Divider/>
+
+            <Group name="Projects" accent='white'>
+              <Tab name ='Scootly.io' url="https://github.com/scootly/react-native-client" img='/scootly.png'/>
+              <Tab name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png'/>
+              <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
+            </Group>
+          </SideBar>
+
+        </div>
+      </BrowserView>
+
       <MobileView>
         <div className='mobilescreen'>
-          <MobileBar popupClick={(val) => popupClick(val)}/>
+          <SideBar popupClick={(val) => popupClick(val)}>
+            <Group name="Me">
+              <Tab name='About Me' img={AppStyles.icon.images.logoDark}/>
+              <Tab name='GitHub' img='/github-light.png' url='https://github.com/johnamii' />
+            </Group>
+
+            <Group name="Projects" accent='white'>
+              <Tab name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png'/>
+              <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
+            </Group>
+            <Tab name ='Scootly.io' url="https://github.com/scootly/react-native-client" img='/scootly.png'/>
+          </SideBar>
+
           <AboutPopup visible={popup === 'about-me'}/>
           <Center lightTheme={light} themeClick={() => handleClick()}/>
             
         </div>
       </MobileView>
-
-      <BrowserView>
-        <div className='homescreen'>
-          <AboutPopup visible={popup === 'about-me'}/>
-          <SideBar popupClick={(val) => popupClick(val)}/>
-          <Center lightTheme={light} themeClick={() => handleClick()}/>
-          <img className='boat' src={light ? logos.logoLight : logos.logoDark} alt="Sailboat"/>
-          
-        </div>
-      </BrowserView>
     </div>
     
   )
@@ -93,10 +134,10 @@ export default App;
 const MobileBar = (props) => {
   return (
     <div className='mobile-bar'>
-      <IconButton name='About Me' img='/sailboat.png' onClick={(val) => {props.popupClick('about-me')}}/>
-      <IconButton name='GitHub' url='https://github.com/johnamii' img='/github-light.png' />
-      <IconButton name='PokeTheme Battles' url='https://poketheme.johnamii.com' img={AppStyles.icon.images.poketheme} />
-      <IconButton name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
+      <Tab name='About Me' img='/sailboat.png' onClick={(val) => {props.popupClick('about-me')}}/>
+      <Tab name='GitHub' url='https://github.com/johnamii' img='/github-light.png' />
+      <Tab name='PokeTheme Battles' url='https://poketheme.johnamii.com' img={AppStyles.icon.images.poketheme} />
+      <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
     </div>
   )
 }
