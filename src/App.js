@@ -69,7 +69,7 @@ const HomeScreen = () => {
 
   return (
     <div>
-      <BrowserView>
+      
         <div className='homescreen'>
           <AboutPopup visible={popup === 'about-me'}/>
           
@@ -90,32 +90,8 @@ const HomeScreen = () => {
               <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
             </Group>
           </SideBar>
-
         </div>
-      </BrowserView>
-
-      <MobileView>
-        <div className='mobilescreen'>
-          <SideBar popupClick={(val) => popupClick(val)}>
-            <Group name="Me">
-              <Tab name='About Me' img={AppStyles.icon.images.logoDark}/>
-              <Tab name='GitHub' img='/github-light.png' url='https://github.com/johnamii' />
-            </Group>
-
-            <Group name="Projects" accent='white'>
-              <Tab name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png'/>
-              <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
-            </Group>
-            <Tab name ='Scootly.io' url="https://github.com/scootly/react-native-client" img='/scootly.png'/>
-          </SideBar>
-
-          <AboutPopup visible={popup === 'about-me'}/>
-          <Center lightTheme={light} themeClick={() => handleClick()}/>
-            
-        </div>
-      </MobileView>
-    </div>
-    
+    </div> 
   )
 }
 
