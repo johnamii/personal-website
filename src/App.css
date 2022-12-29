@@ -1,14 +1,8 @@
-body{
-  color: pink;
-  width: 99vw;
-  overflow-x:hidden;
-}
-
 .homescreen{
   background-color: #282c34;
   color: white;
   height: 200vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
 }
 
@@ -23,25 +17,12 @@ body{
   height: 10%;
   color: #1e2127;
   
-
   position: absolute;
   right: 2rem;
   font-size:300%;
   align-items: center;
   justify-content: space-between;
 
-}
-
-.mobile-bar{
-  height:7vh;
-  width: 100%;
-  background-color: #1e2127;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  position: absolute;
-  
 }
 
 .theme-button{
@@ -106,9 +87,7 @@ body{
   width: 10vw;
   top: 63%;
   left: 45%;
-  
   animation: difting 5ms infinite, floating 7071ms infinite;
-  
 }
 
 @keyframes floating {
