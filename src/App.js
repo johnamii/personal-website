@@ -1,7 +1,7 @@
 import Wave from 'react-wavify'
 import { useEffect, useState, useRef } from 'react';
 import { isMobile } from 'react-device-detect'
-import { SideBar, Group, Tab, Divider } from './sidebar/sidebar'
+import { SideBar, Group, Tab, Divider } from '@johnamii/react-smart-sidebar'
 import AboutPopup from './AboutPopup';
 import {AppStyles} from './AppStyles';
 import './App.css';
@@ -103,11 +103,13 @@ const HomeScreen = () => {
 
         <Group name="Projects" accent='white'>
           <Tab name ='Scootly.io' url="https://github.com/scootly/react-native-client" img='/scootly.png'/>
+          <Tab name="React Smart Sidebar" url="https://github.com/johnamii/react-smart-sidebar" img="/sidebar.png"/>
           <Tab name='PokeTheme Battles' url='https://poketheme.johnamii.com' img='/pokeballs.png'/>
           <Tab name='Terni Lapilli' url='https://terni.johnamii.com' img='/pebbles.png'/>
         </Group>
+
       </SideBar>
-    </div> 
+    </div>
   )
 }
 
