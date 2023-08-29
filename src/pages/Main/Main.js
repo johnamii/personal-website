@@ -1,7 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { NavHashLink as NavLink } from 'react-router-hash-link'
 
-import { Footer, Landing, About, Skills, Education, Experience, Contacts, Projects } from '../../components'
+import { Footer, Landing, About, Skills, Education, Experience, Contacts, Projects, Navbar } from '../../components'
 import { SideBar, Group, Tab, Divider  } from '@johnamii/react-smart-sidebar'
 import { headerData } from '../../data/headerData'
 
@@ -15,7 +16,7 @@ function Main() {
                 <title>{headerData.name} - Porfolio</title>
             </Helmet>
 
-            {/* <Navbar />         */}
+            <Navbar />        
             <Landing />
             <About />
             <Education />
@@ -29,7 +30,7 @@ function Main() {
             <Contacts />
             <Footer />
 
-            <SideBar >
+            {/* <SideBar >
                 <Group name="Me">
                 <Tab name='My Sea' img={sailboat} url={window.location.href + '/playground'}/>
                 <Tab name='GitHub' img={githubLogo} url='https://github.com/johnamii' />
@@ -38,10 +39,17 @@ function Main() {
                 <Divider/>
 
                 <Group name="This Page">
-
+                    <Tab name="Resume">
+                        <NavLink
+                            to='/#resume'
+                            smooth={true}
+                            spy='true'
+                            duration={2000}
+                        />
+                    </Tab>
                 </Group>
 
-            </SideBar>
+            </SideBar> */}
         </div>
     )
 }

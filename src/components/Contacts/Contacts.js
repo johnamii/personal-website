@@ -167,7 +167,7 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: theme.primary }}>Contacts</h1>
+                <h1 style={{ color: theme.primary }}>Contact Me</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
                         <form onSubmit={handleContactForm}>
@@ -290,17 +290,6 @@ function Contacts() {
                             </div>
                             <p style={{ color: theme.tertiary }}>
                                 {contactsData.email}
-                            </p>
-                        </a>
-                        <a
-                            href={`tel:${contactsData.phone}`}
-                            className='personal-details'
-                        >
-                            <div className={classes.detailsIcon}>
-                                <FiPhone />
-                            </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.phone}
                             </p>
                         </a>
                         <div className='personal-details'>
