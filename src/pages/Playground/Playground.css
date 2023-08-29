@@ -1,0 +1,111 @@
+.homescreen{
+  background-color: #282c34;
+  color: white;
+  height: 200vh;
+  width: 100%;
+  display: flex;
+}
+
+.mobilescreen{
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+  width: 100vw;
+}
+
+.header{
+  height: 10%;
+  color: #1e2127;
+  
+  position: absolute;
+  right: 2rem;
+  font-size:300%;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.theme-button{
+  height: 60%;
+
+  position: absolute;
+  top: 10%;
+  right: 0%;
+}
+
+.center{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.popup-window{
+  position: absolute;
+  height: 50vh;
+  width: 50vw;
+  background: rgb(256, 256, 256, .6);
+  border-radius: 2mm;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  box-shadow: 1px 1px 5px 1px rgb(50, 50, 50, .5);
+  text-align: center;
+  animation: emerge-from-bar .5s 1;
+}
+
+.about-tabs{
+  
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.about-tab{
+  height: 100%;
+  width: 20%;
+  background: transparent;
+  border: none;
+  font-size: large;
+  font-weight:bold;
+}
+
+.about-text{
+  color:'black'
+}
+
+.water{
+  height: 62%;
+}
+
+.boat{
+  position: absolute;
+  height: 10vw;
+  width: 10vw;
+  top: 63%;
+  left: 45%;
+  animation: difting 5ms infinite, floating 7071ms infinite;
+}
+
+@keyframes floating {
+  from {transform: translateY(0%);}
+  55% {transform: translateY(22%);}
+  to {transform: translateY(0%);}
+}
+
+@keyframes drifting {
+  from {transform: rotate(45deg);}
+  to {transform: rotate(0deg);}
+}
+
+@keyframes emerge-from-bar{
+  from {margin-left: -100%;}
+  to { margin-left: 0%;}
+}
+@keyframes return-to-bar {
+  from {margin-left:0%;}
+  to {margin-left:-100%;}
+}
