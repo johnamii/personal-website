@@ -14,6 +14,57 @@
   position: relative;
 }
 
+.wave--container {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  z-index: 1;
+  bottom: 0;
+  overflow:visible;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  
+  overflow: visible;
+}
+
+.sailboat {
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+
+  animation: bob 3s ease-in-out infinite;
+  transition: transform 1s ease-in-out;
+}
+
+.boat-wrapper{
+
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+
+  transition: transform 3s ease-out;
+}
+
+@keyframes bob {
+  /* start from the original position */
+  0% {
+    transform: translateY(0);
+  }
+
+  /* move up by 10 pixels at half time */
+  50% {
+    transform: translateY(8px);
+  }
+
+  /* return to the original position at the end */
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .landing--img {
   --img-size: 400px;
   position: absolute;
@@ -25,6 +76,7 @@
   border-radius: 50%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s;
+  
 }
 
 .landing--container-left {
@@ -162,6 +214,18 @@
   .landing--container {
     flex-direction: column;
     justify-content: space-between;
+  }
+  .wave--container{
+    height:10%;
+  }
+  .wave{
+    height: 110%;
+  }
+  .sailboat{
+    left: 0;
+    top: 15px;
+    height: 4em;
+    width: 4em;
   }
   .landing--img {
     --img-size: 200px;
